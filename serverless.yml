@@ -1,0 +1,24 @@
+service: aws-node-fetch-file-and-store-in-s3
+
+frameworkVersion: ">=1.1.0"
+
+custom:
+  bucket: codefrontbucket
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: ap-south-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:PutObjectAcl
+      Resource: "arn:aws:s3:::codefrontbucket/*"
+
+functions:
+  save:
+    handler: handler.save
+    environment:
+      BUCKET: arn:aws:s3:::codefrontbucket
