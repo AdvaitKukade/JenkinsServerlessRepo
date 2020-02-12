@@ -1,0 +1,26 @@
+.headerWrap{
+    background-color: $reuters-black;
+    padding: 0 30px;
+    &.navbar{
+        @extend .font-size-lg;
+        .navbar-brand{
+            margin-right: 94px;
+            padding: 0;
+            img{
+                min-width: 174px;
+            }
+        }
+        .navbar-nav{
+            .nav-item{
+                padding: 25px 0px;
+                border-bottom: 3px solid;
+                a{
+                    padding:0;
+                }
+                &.active{
+                    border-color: $reuters-primary;
+                }
+            }
+        }
+    }
+}
